@@ -1,4 +1,6 @@
-/* Sum of Natural Numbers  */
+/*
+  1. Sum of Natural Numbers  
+*/
 
 function sumOfNaturalNumbers(n) {
   let sum = 0;
@@ -6,4 +8,38 @@ function sumOfNaturalNumbers(n) {
     sum += i;
   }
   return sum;
+  // Alternatively, you can use the formula n * (n + 1) / 2
+  // return (n * (n + 1)) / 2;
 }
+
+/*
+  2. Sum of digits of Numbers  
+*/
+
+function sumOfDigits(n) {
+  let sum = 0;
+  while (n > 0) {
+    sum += n % 10;
+    n = Math.floor(n / 10);
+  }
+  return sum;
+  // Alternatively, you can use the following method:
+  // return n.toString().split('').reduce((acc, digit) => acc + Number(digit), 0);
+}
+
+/*
+  3.Count the number of digits of a number
+*/
+
+function countNoOfDigits(num) {
+  num = Math.abs(num);
+  let count = 0;
+  do {
+    count++;
+    num = Math.floor(num / 10);
+  } while (num > 0);
+  return count;
+  // Alternatively, you can use the following method:
+  // return num.toString().length;
+}
+console.log(countNoOfDigits(12345)); // Output: 15
