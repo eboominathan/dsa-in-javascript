@@ -42,4 +42,14 @@ function countNoOfDigits(num) {
   // Alternatively, you can use the following method:
   // return num.toString().length;
 }
-console.log(countNoOfDigits(12345)); // Output: 15
+
+/*
+4. Palindrome Number    
+*/
+function isPalindrome(num) {
+  const str = num.toString();
+  const reversedStr = str.split("").reverse().join("");
+  return str === reversedStr;
+  // Alternatively, you can use the following method:
+  // return num === parseInt(str.split('').reverse().join(''), 10);
+}
