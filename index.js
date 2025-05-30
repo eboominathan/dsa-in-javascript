@@ -47,9 +47,17 @@ function countNoOfDigits(num) {
 4. Palindrome Number    
 */
 function isPalindrome(num) {
-  const str = num.toString();
+  let reversed = 0;
+  let original = num;
+  while (num > 0) {
+    let digit = num % 10;
+    reversed = reversed * 10 + digit;
+    num = Math.floor(num / 10);
+  }
+  return original === reversed;
+  /* const str = num.toString();
   const reversedStr = str.split("").reverse().join("");
-  return str === reversedStr;
-  // Alternatively, you can use the following method:
-  // return num === parseInt(str.split('').reverse().join(''), 10);
+  return str === reversedStr; */
+  /*    Alternatively, you can use the following method:
+   return num === parseInt(str.split('').reverse().join(''), 10); */
 }
